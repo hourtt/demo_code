@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<h1>Edit Form</h1>
+<form th:action="${'/edit/form/'+staffId}" method="post">
+    Login Id : <input type="text" name="loginId" th:value="${staff.loginId}" /><br/>
+    password : <input type="text" name="password" th:value="${staff.password}" /><br/>
+    name : <input type="text" name="name" th:value="${staff.name}" /><br/>
+    BirthDate : <input type="text" name="birthDate" th:value="${staff.birthDate}" /><br/>
+    E-Mail : <input type="text" name="email" th:value="${staff.email}" /><br/>
+    <input type="submit" value="Edit"/>
+</form>
+</body>
+</html>

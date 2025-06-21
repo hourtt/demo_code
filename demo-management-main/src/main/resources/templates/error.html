@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Error List</h2>
+<div th:each="lst:${errors}">
+    <span th:text="${lst.key}"></span> : <span th:text="${lst.value}"></span>
+</div>
+
+</body>
+</html>

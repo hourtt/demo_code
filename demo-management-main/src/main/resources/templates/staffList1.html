@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:text="${'Total Count : ' + list.totalElements}"/>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Login Id</td>
+        <td>Name</td>
+        <td>BirthDate</td>
+        <td>E-Mail</td>
+        <td>Modify</td>
+    </tr>
+    <tr th:each="lst:${list}">
+        <td th:text="${lst.id}"></td>
+        <td th:text="${lst.loginId}"></td>
+        <td th:text="${lst.name}"></td>
+        <td th:text="${lst.birthDate}"></td>
+        <td th:text="${lst.email}"></td>
+        <td><a th:href="${'/edit/form/'+lst.id}">Edit</a></td>
+    </tr>
+</table>
+<a href="/add/form">Add</a>
+<div>
+    <th:block th:each="page:${#numbers.sequence(0, list.totalPages - 1)}">
+        <a th:href="${'/list1?pageNo='+ page}">
+        <span th:text="${'[ ' + page + ' ]'}"
+              th:style="${page == list.pageable.pageNumber ? 'color: red; font-size: 20px;' : ''}"/>
+        </a>
+    </th:block>
+</div>
+</body>
+
+</html>
