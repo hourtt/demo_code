@@ -14,7 +14,6 @@ public interface BoardRepository extends JpaRepository<Board,Long> {
 
 
 //* To Merge the code*//
-
 // 1. Create the new branch (In other word, second branch)
 // 2. Commit or push the file into that second branch
 // 3. check on the Github (It'll show and tell you to compare & pull request)
