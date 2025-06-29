@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+//*Pushing the code (Testing)
 public interface BoardRepository extends JpaRepository<Board,Long> {
     //Change from Page to Slice
     Slice<Board> findAllByCreatedBy(String writer, PageRequest pageRequest);
